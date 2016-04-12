@@ -35,11 +35,10 @@ const AppComponent = React.createClass({
   render() {
     return (
       <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
         <ul>
           {this.renderLikes()}
         </ul>
-        <div className="notice">Please eddfiojsgfkit <code>src/components/Main.js</code> to get started!</div>
+        
       </div>
     );
   }
