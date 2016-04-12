@@ -6,8 +6,6 @@ import ReactFireMixin from 'reactfire'
 import React from 'react';
 import LikeLineItem from './LikeLineItem';
 
-let yeomanImage = require('../images/yeoman.png');
-
 const AppComponent = React.createClass({
   mixins: [ReactFireMixin],
 
@@ -28,7 +26,7 @@ const AppComponent = React.createClass({
         return <LikeLineItem key={index} like={like} />
       });
     } else {
-      setTimeout(this.renderLikes, 1000);
+      setTimeout(this.renderLikes, 500);
     }
   },
 
@@ -38,7 +36,7 @@ const AppComponent = React.createClass({
         <ul>
           {this.renderLikes()}
         </ul>
-        
+
       </div>
     );
   }
