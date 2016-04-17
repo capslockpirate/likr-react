@@ -5,6 +5,9 @@ import Firebase from 'firebase';
 import ReactFireMixin from 'reactfire'
 import React from 'react';
 import LikeLineItem from './LikeLineItem';
+import UnLikeButton from './UnLikeButton';
+import LikeButton from './LikeButton';
+
 
 const AppComponent = React.createClass({
   mixins: [ReactFireMixin],
@@ -23,7 +26,12 @@ const AppComponent = React.createClass({
   renderLikes() {
     if (this.state.items) {
       return this.state.items.map(function(like, index) {
-        return <LikeLineItem key={index} like={like} />
+        return (
+          <div key={index}>
+            <LikeLineItem like={like} />
+            <UnLikeButton liker={like['.key']} key={like['.key']}  />
+          </div>
+        )
       });
     } else {
       setTimeout(this.renderLikes, 500);
@@ -36,13 +44,13 @@ const AppComponent = React.createClass({
         <ul>
           {this.renderLikes()}
         </ul>
-
+        <LikeButton />
       </div>
     );
   }
 
 
-})
+});
 
 AppComponent.defaultProps = {
 };
