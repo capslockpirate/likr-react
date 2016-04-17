@@ -41,10 +41,10 @@ const AppComponent = React.createClass({
   render() {
     return (
       <div className="index">
+        <LikeButton />
         <ul>
           {this.renderLikes()}
         </ul>
-        <LikeButton />
       </div>
     );
   }
